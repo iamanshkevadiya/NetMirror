@@ -1,9 +1,14 @@
-const monggose = require("mongoose");
+const mongoose = require('mongoose');
 require("dotenv").config();
-const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/Netmirror";
 
-const DATABASE = async () => {
-	await monggose.connect(DB_URL)
-	console.log("DB connected successfully");
+const connectDB = async () => {
+
+	try {
+		await mongoose.connect(process.env.MONGO_URI);
+		console.log('MongoDB connected');
+	} catch (error) {
+		console.log(error);
+	}
 };
-module.exports = DATABASE;
+
+module.exports = connectDB;

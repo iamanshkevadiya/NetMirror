@@ -1,9 +1,13 @@
 const { Router } = require("express");
-const { createuser, Loginuser } = require("../controller/User.controller");
-const Tokendeocde = require("../middlewares/Jwt_decode");
-const UserRouter = Router();
+const { decode } = require("../middlewares/decodejwt");
+const { getAdmins, getUser, getUserById, Login, Signup, deleteUser } = require("../controller/user.controller");
+const userRouter = Router();
 
-UserRouter.post("/signup", createuser);
-UserRouter.post("/login",Tokendeocde, Loginuser); 
+userRouter.get('/admin', decode, getAdmins);
+userRouter.get('/', getUser);
+userRouter.get('/:id', getUserById);
+userRouter.post('/login', Login);
+userRouter.post('/signup', Signup);
+userRouter.delete('/delete/:id', deleteUser);
 
-module.exports = UserRouter;
+module.exports = userRouter;

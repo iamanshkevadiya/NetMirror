@@ -1,62 +1,103 @@
-const User = require("../model/user.model");
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
-const JWT_SECRET = process.env.JWT_SECRET || "NetMirror_DB";
+const bcrypt = require("bcrypt");
+const User = require("../model/user.model");
 
 
-const siunup = async (req, res) => {
+const Signup = async (req, res) => {
+
   let { email, password } = req.body;
+
   try {
-    let user = await User.findOne({ email: email, password: password });
-    if (!user) {
-      return res.status(403).json({ msg: "User Already registered" });
+    let user = await User.findOne({ email: email });
+    if (user) {
+      return res.status(400).json({ msg: "User already exists" });
     }
-    let hash = await bcrypt.hash(password, 10);
-    req.body.password = hash;
-    user = await User.create(req.body);
-    let data = {
-      email: user.email,
-      id: user.id,
-      role: user.role,
-      name: user.name,
-      isActive: user.isActive,
-    };
-    let token = await jwt.sign(data, JWT_SECRET);
-    res.cookies("User_token", token);
-    return res.status(201).json({
-      msg: "User Created",
-      token: token
-    });
+    else {
+      let hash = await bcrypt.hash(password, 10);
+      req.body.password = hash;
+      let user = await User.create(req.body);
+      let data = {
+        email: user.email,
+        id: user.id,
+        username: user.username,
+      }
+      console.log(data);
+
+      let token = await jwt.sign(data, 'private-key');
+      console.log(token);
+
+      return res.status(201).json({
+        msg: 'user Created',
+        token: token,
+      });
+    }
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ msg: "err", error: error.message });
   }
 };
+
 
 const Login = async (req, res) => {
   let { email, password } = req.body;
+  let user = await User.findOne({ email });
+  if (!user) {
+    return res.status(400).json({ msg: "User not found" });
+  }
+
+  let match = await bcrypt.compare(password, user.password);
+  if (!match) {
+    return res.status(400).json({ msg: "Invalid Pasword" });
+  }
+  console.log(req.body, user);
+  let data = {
+    email: user.email,
+    id: user.id,
+  }
+  let token = await jwt.sign(data, 'private-key');
+
+  return res.status(200).json({
+    msg: 'User logged in',
+    token: token,
+  });
+};
+
+const getUser = async (req, res) => {
+  let users = await User.find();
+  res.status(200).json(users);
+};
+
+const getUserById = async (req, res) => {
   try {
-    let user = await User.findOne({ email });
-    if (!user) {
-      return res.status(404).json({ msg: "User not found" });
-    }
-    let isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(403).json({ msg: "Invalid credentials" });
-    }
-    let data = {
-      email: user.email,
-      id: user.id,
-      role: user.role,
-      name: user.name,
-    };
-    let token = await jwt.sign(data, JWT_SECRET);
-    res.cookies("User_token", token);
-    return res.status(200).json({ msg: "User logged in", token: token });
+    let { userid } = req.params;
+    let data = await User.findById(userid);
+    res.send(data);
   } catch (error) {
+    res.send({ message: error });
+  }
+}
+
+const deleteUser = async (req, res) => {
+  let { id } = req.params;
+  try {
+    let user = await User.findByIdAndDelete(id);
+    res.status(200).json({ msg: "user Deleted", user });
+  }
+  catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ msg: "err deleting user", error });
   }
 };
 
+const getAdmins = async (req, res) => {
+  try {
+    let data = await User.find({ role: "ADMIN" });
+    console.log(data);
+    res.status(202).json(data);
+  } catch (error) {
+    res.status(404).json({ err: error.message });
+  }
+};
+
+
+
+module.exports = { Signup, Login, getUser, deleteUser, getAdmins, getUserById };
