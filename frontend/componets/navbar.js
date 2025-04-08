@@ -9,7 +9,16 @@ const logout = () => {
     console.log("Logout clicked");
     Cookies.remove("token");
     window.location.href = "/frontend/pages/login.html";
+}
 
+const handleSearch = (event) => {
+    if (event.key === 'Enter') {
+        const searchQuery = event.target.value.trim();
+        if (searchQuery) {
+            // Redirect to search results page with query parameter
+            window.location.href = `/frontend/pages/search.html?q=${encodeURIComponent(searchQuery)}`;
+        }
+    }
 }
 
 const navbar = () => {
@@ -27,27 +36,32 @@ const navbar = () => {
                 <div class="d-flex justify-content-between header">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="logo">
-                            <a class="navbar-brand" href="index.html"><img src=""
-                                    alt="LOGO"></a>
+                            <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="LOGO"></a>
                         </div>
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">THE Gallery</a>
+                                <a class="nav-link" href="/frontend/pages/series.html">TV Series</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Work</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">E-Shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="/frontend/pages/movies.html">Movies</a>
                             </li>
                             <li class="nav-item">
                                 ${tag}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="icon d-flex align-items-center">
+                        <div class="search-box me-3">
+                            <input type="text" class="form-control" placeholder="Search movies & series..." 
+                                   id="searchInput" onkeypress="handleSearch(event)">
+                            <i class="bi bi-search search-icon"></i>
+                        </div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/frontend/pages/signup.html"><i class="bi bi-people"></i></a>
                             </li>
                         </ul>
                     </div>
