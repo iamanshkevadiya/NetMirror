@@ -11,9 +11,7 @@ const userApi = {
                 },
                 body: JSON.stringify(user),
             });
-
             let res = await req.json();
-            console.log(res);
 
             if (req.status === 400) {
                 alert("User already exists. Please log in.");
@@ -21,9 +19,9 @@ const userApi = {
             else if (req.status === 201) {
                 Cookies.set("token", res.token, { expires: 3 });
                 console.log(token);
-                setTimeout(function () {
-                    window.location.href = "frontend/index.html";
-                }, 50000);
+                return setTimeout(function () {
+                    window.location.href = "../index.html";
+                }, 500);
             }
             else {
                 alert(res.message || "Signup failed. Please try again.");
@@ -50,7 +48,7 @@ const userApi = {
                 alert(res.msg)
 
                 return setTimeout(function () {
-                    window.location.href = "frontend/index.html";
+                    window.location.href = "../index.html";
                 }, 500);
             }
             else {

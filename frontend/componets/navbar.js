@@ -1,9 +1,9 @@
-import getUserData from "../utils/Cookies.js";
+// const jwt = require("jsonwebtoken");
 
 let { token } = Cookies.get();
 console.log("Token:", token);
 
-const decodeToken = token != undefined ? jwt_decode(token) : undefined;
+const decodeToken = token ? jwt_decode(token) : undefined;
 
 const logout = () => {
     console.log("Logout clicked");

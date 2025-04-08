@@ -6,7 +6,7 @@ const baseUrl = "http://localhost:8090";
 const AdminApi = {
     getAdmins: async () => {
         try {
-            let req = await fetch(`${baseUrl}/user/all-admin`, {
+            let req = await fetch(`${baseUrl}/user/admin`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${getToken()}`,

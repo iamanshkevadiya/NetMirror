@@ -1,5 +1,3 @@
-import Cookies from "cookies";
-
 let { token } = Cookies.get();
 
 export const getToken = () => token
