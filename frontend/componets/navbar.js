@@ -36,17 +36,22 @@ const navbar = () => {
                 <div class="d-flex justify-content-between header">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="logo">
-                            <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="LOGO"></a>
+                            <a class="navbar-brand" href="/frontend/index.html">
+                                <img src="/frontend/images/logo.png" alt="LOGO">
+                            </a>
                         </div>
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link" aria-current="page" href="/frontend/index.html">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/frontend/pages/series.html">TV Series</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/frontend/pages/movies.html">Movies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/frontend/pages/product.html">Add Movies</a>
                             </li>
                             <li class="nav-item">
                                 ${tag}

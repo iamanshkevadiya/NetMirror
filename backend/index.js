@@ -6,6 +6,7 @@ const path = require('path');
 
 const connectDB = require('./config/DB');
 const userRouter = require('./router/User.router');
+const productRouter = require('./router/Product.router');
 
 
 app.use(cors());
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/user', userRouter);
+app.use('/product', productRouter);
 
 const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {

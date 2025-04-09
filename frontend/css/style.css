@@ -116,6 +116,14 @@ header .navbar .collapse ul li a:hover::after {
     height: 850px;
 }
 
+.bg-img-add {
+    background-image: url('../images/home-bg.jpg');
+    /* background-position: center 70%; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 850px;
+}
+
 .main {
     display: flex;
     align-items: center;
@@ -143,10 +151,10 @@ header .navbar .collapse ul li a:hover::after {
 }
 
 .main .title {
-    background-image: url('../images/bg-03.png');
+    background-image: url('../images/bg-02-preview.png');
     /* background-size: cover; */
     background-repeat: no-repeat;
-    background-position: 10% 30%;
+    background-position: 5% 40%;
     height: 800px;
 }
 
