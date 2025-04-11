@@ -8,7 +8,11 @@ const productSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true,
-        enum: ["TV Series", "Movies"],
+    },
+    type: {
+        type: String,
+        required: true,
+        enum: ["Series", "Movies"],
     },
 });
 

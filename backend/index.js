@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/user', userRouter);
-app.use('/product', productRouter);
+app.use('/products', productRouter);
 
 const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {

@@ -1,5 +1,3 @@
-// const jwt = require("jsonwebtoken");
-
 let { token } = Cookies.get();
 console.log("Token:", token);
 

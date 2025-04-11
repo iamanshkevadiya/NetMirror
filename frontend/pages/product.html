@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>Add Movie/Series</title>
     <link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon">
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css.map">
     <link rel="stylesheet" href="../css/bootstrap-icons.min.css">
-
 
     <!-- JWT css  -->
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
@@ -21,6 +20,8 @@
         integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- Font css  -->
+     <link rel="stylesheet" href="../css/fonts.css">
     <!-- Style css  -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -44,8 +45,59 @@
                 </div>
             </div>
         </section>
+        <!-- add product Section -->
+        <section class="add-product-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card add-product-card">
+                            <div class="card-body">
+                                <h2 class="card-title text-center mb-4">Add New Movie/Series</h2>
+                                <form id="addProductForm">
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" class="form-control" id="title" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label">Description</label>
+                                        <textarea class="form-control" id="description" rows="3" required></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="category" class="form-label">Category</label>
+                                        <select class="form-select" id="category" required>
+                                            <option value="">Select Category</option>
+                                            <option value="movie">Movie</option>
+                                            <option value="series">TV Series</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="image" class="form-label">Poster Image</label>
+                                        <input type="file" class="form-control" id="image" accept="image/*" required>
+                                    </div>
+
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Add Movie/Series</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <form action="multipart/form-data" id="add-movies">
+                <input type="text" name>
+            </form>
+        </section>
     </main>
 </body>
+
+<!-- Products.js src  -->
+<script type="module" src="../js/products.js"></script>
 
 <!-- Index.js src  -->
 <script type="module" src="../js/index.js"></script>
