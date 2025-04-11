@@ -1,0 +1,357 @@
+{
+    "Movie":[
+        {
+            "id":1,
+            "title":"VENOM",
+            "description":"Investigative journalist Eddie uncovers CEO Drake's unethical experiments. His life transforms when he merges with an alien symbiote.",
+            "image":"./images/movie/venom.jpg",
+            "cetegory":"Action,Science Fiction",
+            "type":"movie"
+        },
+        {
+            "id":2,
+            "title":"Cadaver",
+            "description":"A high-profile murder baffles the cops when a prison inmate claims responsibility and promises more deaths. Will police surgeon Bhadra crack this mystery?",
+            "image":"./images/movie/cadver.jpg",
+            "cetegory":"Thriller, Crime, Mystery, Drama, Dark, Investigative, Medical",
+            "type":"movie"
+        },
+        {
+            "id":3,
+            "title":"The past",
+            "description":"When a budding writer moves to a hill station to write her new book, little does she know that an evil plot is about to unfold and take her into the past.",
+            "image":"./images/movie/past.jpg",
+            "cetegory":"Horror, Mystery, Occult, Paranormal, Dark",
+            "type":"movie"
+        },
+        {
+            "id":4,
+            "title":"BEAST",
+            "description":"Former RAW agent Veera must face his fears when a terrorist organisation holds him hostage in a mall along with other visitors and demands the release of their leader, who was captured by Veera.",
+            "image":"./images/movie/BEAST.jpg",
+            "cetegory":"Thriller,Action,crime,comedy,dark comedy",
+            "type":"movie"
+        },
+        {
+            "id":5,
+            "title":"The Conjuring 2",
+            "description":"Peggy, a single mother of four children, seeks the help of occult investigators Ed and Lorraine Warren when she and her children witness strange, paranormal events in their house.",
+            "image":"./images/movie/conjuring.jpg",
+            "cetegory":"Hrror",
+            "type":"movie"
+        },
+        {
+            "id":6,
+            "title":"Pokemon diance and the cocon of destr",
+            "description":"Diancie's power fails. Thieves plot, Yveltal awakens. Ash and friends must save the Diamond Domain!",
+            "image":"./images/movie/pokemon.jpg",
+            "cetegory":"Animation,kids,adventure",
+            "type":"movie"
+        },
+        {
+            "id":7,
+            "title":"Good Will Hunting",
+            "description":"Will Hunting has a genius-level IQ but chooses to work as a janitor at MIT. When he solves a difficult graduate-level math problem, his talents are discovered by Professor Gerald Lambeau, who decides to help the misguided youth reach his potential. When Will is arrested for attacking a police officer, Professor Lambeau makes a deal to get leniency for him if he will get treatment from therapist Sean Maguire.",
+            "image":"./images/movie/goodwill.jpg",
+            "cetegory":"drama, romance"
+        },
+        {
+            "id":8,
+            "title":"Fractured",
+            "description":"Driving cross-country, Ray and his wife and daughter stop at a highway rest area where his daughter falls and breaks her arm. After a frantic rush to the hospital and a clash with the check-in nurse, Ray is finally able to get her to a doctor. While the wife and daughter go downstairs for an MRI, Ray, exhausted, passes out in a chair in the lobby. Upon waking up, they have no record or knowledge of Ray's family ever being checked in.",
+            "image":"./images/movie/fractured.jpg",
+            "cetegory":"Thriller, Crime, Mystery",
+            "type":"movie"
+        },
+        {
+            "id":9,
+            "title":"The Next Three Days",
+            "description":"A married couple's life is turned upside down when the wife is accused of murdering her boss. Her husband John would spend the next few years trying to get her released, but there's no evidence that negates the evidence against her. When the strain of being separated from her husband and son gets to her, John decides to find a way to break her out.",
+            "image":"./images/movie/The Next Three Days.jpg",
+            "cetegory":"Thriller, Crime,Drama,Romance",
+            "type":"movie"
+        },
+        {
+            "id":10,
+            "title":"No Way Out",
+            "description":"Navy Lt. Tom Farrell meets a young woman, Susan Atwell , and they share a passionate fling. Farrell then finds out that his superior, Defense Secretary David Brice, is also romantically involved with Atwell. When the young woman turns up dead, Farrell is put in charge of the murder investigation. He begins to uncover shocking clues about the case, but when details of his encounter with Susan surface, he becomes a suspect as well.",
+            "image":"./images/movie/no wy out.jpg",
+            "cetegory":"spy,Action,crime,drama,mystery,romace",
+            "type":"movie"
+        },
+        {
+            "id":11,
+            "title":"Inception",
+            "description":"A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+            "image":"./images/movie/inception.jpg",
+            "cetegory":"Science Fiction, Thriller, Action",
+            "type":"movie"
+        },
+        {
+            "id":12,
+            "title":"Interstellar",
+            "description":"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+            "image":"./images/movie/interstellar.jpg",
+            "cetegory":"Science Fiction, Drama, Adventure",
+            "type":"movie"
+        },
+        {
+            "id":13,
+            "title":"The Dark Knight",
+            "description":"When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+            "image":"./images/movie/dark_knight.jpg",
+            "cetegory":"Action, Crime, Drama",
+            "type":"movie"
+        },
+        {
+            "id":14,
+            "title":"Parasite",
+            "description":"Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+            "image":"./images/movie/parasite.jpg",
+            "cetegory":"Thriller, Drama, Dark Comedy",
+            "type":"movie"
+        },
+        {
+            "id":15,
+            "title":"The Matrix",
+            "description":"A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+            "image":"./images/movie/matrix.jpg",
+            "cetegory":"Science Fiction, Action",
+            "type":"movie"
+        },
+        {
+            "id":16,
+            "title":"Joker",
+            "description":"In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime.",
+            "image":"./images/movie/joker.jpg",
+            "cetegory":"Crime, Drama, Thriller",
+            "type":"movie"
+        },
+        {
+            "id":17,
+            "title":"Avengers: Endgame",
+            "description":"After the devastating events of Avengers: Infinity War, the universe is in ruins. The Avengers assemble once more to reverse Thanos' actions and restore balance.",
+            "image":"./images/movie/endgame.jpg",
+            "cetegory":"Action, Adventure, Science Fiction",
+            "type":"movie"
+        },
+        {
+            "id":18,
+            "title":"Shutter Island",
+            "description":"Teddy Daniels and Chuck Aule, two U.S. marshals, are sent to a mental institution on a remote island to investigate the disappearance of a patient.",
+            "image":"./images/movie/shutter_island.jpg",
+            "cetegory":"Thriller, Mystery, Drama",
+            "type":"movie"
+        },
+        {
+            "id":19,
+            "title":"The Prestige",
+            "description":"After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+            "image":"./images/movie/prestige.jpg",
+            "cetegory":"Drama, Mystery, Thriller",
+            "type":"movie"
+        },
+        {
+            "id":20,
+            "title":"Fight Club",
+            "description":"An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+            "image":"./images/movie/fight_club.jpg",
+            "cetegory":"Drama, Thriller",
+            "type":"movie"
+        },
+        {
+            "id":21,
+            "title":"Fifty Shades of Grey",
+            "description":"Literature student Anastasia Steele's life changes forever when she meets handsome, yet tormented, billionaire Christian Grey.",
+            "image":"./images/movie/fifty_shades_of_grey.jpg",
+            "cetegory":"Romance, Drama, 18+",
+            "type":"movie"
+        },
+        {
+            "id":22,
+            "title":"Basic Instinct",
+            "description":"A violent police detective investigates a brutal murder that might involve a manipulative and seductive novelist.",
+            "image":"./images/movie/basic_instinct.jpg",
+            "cetegory":"Thriller, Mystery, 18+",
+            "type":"movie"
+        },
+        {
+            "id":23,
+            "title":"Oil on Water",
+            "description":"A loving young creative couple, Max and Anna, experience inexplicable difficulties which tears their relationship apart.",
+            "image":"./images/movie/Oil on Water.jpg",
+            "cetegory":"Drama,  18+",
+            "type":"movie"
+        }
+    ],
+    "Series":[
+        {
+            "id":1,
+            "title":"Weak Hero Class 1",
+            "description":"With the aid of unexpected friends, a gifted but introverted student confronts bullies and violent foes — unaware of how dangerous his world will become.",
+            "image":"./images/series/Weak Hero Class 1.jpg",
+            "cetegory":"Thriller,Action,Drama,k-drama",
+            "type":"series"
+        },
+        {
+            "id":2,
+            "title":"Adolescence",
+            "description":"A family's world turns upside down when 13-year-old Jamie Miller is arrested for murdering a schoolmate: the charges against their son force them to confront every parent's worst nightmare.",
+            "image":"./images/series/Adolescence.jpg",
+            "cetegory":"Crime drama, Psychological drama,Mystery",
+            "type":"series"
+        },
+        {
+            "id":3,
+            "title":"The Trauma Code: Heroes on Call",
+            "description":"A war-seasoned doctor, arrives to establish a premier trauma center, employing his direct yet proficient approach to elevate his team into life-saving mavericks.",
+            "image":"./images/series/The Trauma Code.jpg",
+            "cetegory":"Medical drama, Drama, Comedy drama",
+            "type":"series"
+        },
+        {
+            "id":4,
+            "title":"The Night Agent",
+            "description":"A low-level FBI agent is thrown into a conspiracy that leads all the way to the White House. He must find out who he can trust and who is trying to kill him.",
+            "image":"./images/series/The Night Agent.jpg",
+            "cetegory":"Action, Thriller, Crime, Mystery, Drama",
+            "type":"series"
+        },
+        {
+            "id":5,
+            "title":"The Night Manager",
+            "description":"A former British soldier is recruited to infiltrate an arms dealer's inner circle. As he gets closer to the dealer, he must navigate a world of deception and danger.",
+            "image":"./images/series/The Night Manager.jpg",
+            "cetegory":"Action, Thriller, Drama, Espionage",
+            "type":"series"
+        },
+        {
+            "id":6,
+            "title":"The Blacklist",
+            "description":"A former criminal mastermind surrenders to the FBI with an offer to help catch high-profile criminals, but he has his own agenda and secrets.",
+            "image":"./images/series/The Blacklist.jpg",
+            "cetegory":"Action, Thriller, Crime, Drama",
+            "type":"series"
+        },
+        {
+            "id":7,
+            "title":"The Fall",
+            "description":"A detective hunts a serial killer in Belfast, while the killer stalks his next victim. The series explores the psychological cat-and-mouse game between them.",
+            "image":"./images/series/The Fall.jpg",
+            "cetegory":"Crime, Thriller, Drama, Mystery",
+            "type":"series"
+        },
+        {
+            "id":8,
+            "title":"From ",
+            "description":"A nightmarish town in the middle of nowhere traps all who enter. The residents must fight to survive and find a way out, while facing terrifying creatures that come out at night.",
+            "image":"./images/series/From.jpg",
+            "cetegory":"Horror, Mystery, Thriller, Drama",
+            "type":"series"
+        },
+        {
+            "id":9,
+            "title":"Dark",
+            "description":"A family saga with a supernatural twist, set in a German town where the disappearance of two young children uncovers a mystery spanning several generations.",
+            "image":"./images/series/Dark.jpg",
+            "cetegory":"Science Fiction, Thriller, Mystery, Drama",
+            "type":"series"
+        },
+        {
+            "id":10,
+            "title":"The Haunting of Hill House",
+            "description":"A modern reimagining of Shirley Jackson's classic novel, this series follows a family confronting haunting memories of their old home and the terrifying events that drove them from it.",
+            "image":"./images/series/The Haunting of Hill House.jpg",
+            "cetegory":"Horror, Mystery, Drama, Supernatural",
+            "type":"series"
+        },
+        {
+            "id":11,
+            "title":"The Haunting of Bly Manor",
+            "description":"A young governess is hired to look after two children at a remote estate, but she soon discovers that the house is haunted by dark secrets and spirits from the past.",
+            "image":"./images/series/The Haunting of Bly Manor.jpg",
+            "cetegory":"Horror, Mystery, Romance, Supernatural",
+            "type":"series"
+        },
+        {
+            "id":12,
+            "title":"Breaking Bad",
+            "description":"A high school chemistry teacher turned methamphetamine producer partners with a former student to secure his family's future.",
+            "image":"./images/series/breaking_bad.jpg",
+            "cetegory":"Crime, Drama, Thriller",
+            "type":"series"
+        },
+        {
+            "id":13,
+            "title":"Stranger Things",
+            "description":"When a young boy disappears, his mother, a police chief, and his friends must confront terrifying supernatural forces to get him back.",
+            "image":"./images/series/stranger_things.jpg",
+            "cetegory":"Science Fiction, Horror, Drama",
+            "type":"series"
+        },
+        {
+            "id":14,
+            "title":"Game of Thrones",
+            "description":"Nine noble families wage war against each other in order to gain control over the mythical land of Westeros.",
+            "image":"./images/series/game_of_thrones.jpg",
+            "cetegory":"Fantasy, Drama, Action",
+            "type":"series"
+        },
+        {
+            "id":15,
+            "title":"The Witcher",
+            "description":"Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
+            "image":"./images/series/witcher.jpg",
+            "cetegory":"Fantasy, Action, Adventure",
+            "type":"series"
+        },
+        {
+            "id":16,
+            "title":"Sherlock",
+            "description":"A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
+            "image":"./images/series/sherlock.jpg",
+            "cetegory":"Crime, Mystery, Drama",
+            "type":"series"
+        },
+        {
+            "id":17,
+            "title":"The Mandalorian",
+            "description":"The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+            "image":"./images/series/mandalorian.jpg",
+            "cetegory":"Science Fiction, Action, Adventure",
+            "type":"series"
+        },
+        {
+            "id":18,
+            "title":"The Boys",
+            "description":"A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers.",
+            "image":"./images/series/the_boys.jpg",
+            "cetegory":"Action, Drama, Comedy",
+            "type":"series"
+        },
+        {
+            "id":19,
+            "title":"Chernobyl",
+            "description":"A dramatization of the true story of one of the worst man-made catastrophes in history: the 1986 nuclear accident in the Soviet Union.",
+            "image":"./images/series/chernobyl.jpg",
+            "cetegory":"Drama, History, Thriller",
+            "type":"series"
+        },
+        {
+            "id":20,
+            "title":"Westworld",
+            "description":"Set at the intersection of the near future and the reimagined past, explore a world in which every human appetite can be indulged without consequence.",
+            "image":"./images/series/westworld.jpg",
+            "cetegory":"Science Fiction, Drama, Mystery",
+            "type":"series"
+        },
+        {
+            "id":21,
+            "title":"Tiny Pretty Things",
+            "description":"After an attack brings down the star student at a ballet school, her replacement enters a world of lies, betrayal and cutthroat competition.",
+            "image":"./images/series/tiny_pretty_things.jpg",
+            "cetegory":"Drama,mystery,  18+",
+            "type":"series"
+        }
+    ]
+}

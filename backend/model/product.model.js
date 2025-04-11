@@ -1,17 +1,12 @@
 const { default: mongoose } = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "ADMIN", require: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "ADMIN" },
     title: { type: String, required: true },
     description: { type: String, required: true },
     image: { type: String, default: "" },
     category: {
         type: String,
-        required: true,
-    },
-    type: {
-        type: String,
-        required: true,
         enum: ["Series", "Movies"],
     },
 });
