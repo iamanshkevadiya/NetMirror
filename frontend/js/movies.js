@@ -1,16 +1,19 @@
 import moviesApi from "../api/movies.api.js";
 import productApi from "../api/product.api.js";
 import navbar from "../componets/navbar.js";
+let { token } = Cookies.get();
 
 document.getElementById("navbar").innerHTML = navbar();
 
 const mapper = (data) => {
-    data.forEach(({ user, _id, title, description, img }) => {
+    data.forEach(({ user, _id, title, description, image }) => {
+        console.log(`User: ${user}, ID: ${_id}, Title: ${title}, Description: ${description}, Image: ${image}`);
+        
         const container = document.createElement("div");
         container.classList.add("card", "col-3", "m-2", "p-2", "bg-light");
 
         const imgElement = document.createElement("img");
-        imgElement.src = `http://localhost:8090/${img}`;
+        imgElement.src = `http://localhost:8090/${image}`;
         imgElement.classList.add("card-img-top", "img-fluid");
 
         const titleElement = document.createElement("h5");
@@ -40,17 +43,25 @@ const mapper = (data) => {
         container.appendChild(buttonGroup);
 
         document.getElementById("moviesContainer").appendChild(container);
+
+        return user;
     });
 }
 
-const getMovies = async () => {
+const getMovies = async (token) => {
     try {
-        const movies = await productApi.getByUserId();
-        if (!data || data.length === 0) {
-            console.warn("No products available.");
-            document.getElementById("moviesContainer").textContent = "No Movies available.";
-            return;
-        }
+        // Fetch movies from the API
+        console.log(token);
+        
+        
+        const movies = await productApi.get();
+        console.log("Movies:", movies);
+        
+        // if (!data || data.length === 0) {
+        //     console.warn("No products available.");
+        //     document.getElementById("moviesContainer").textContent = "No Movies available.";
+        //     return;
+        // }
         mapper(movies);
     } catch (error) {
         console.error("Error fetching products:", error);

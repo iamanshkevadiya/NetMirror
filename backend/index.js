@@ -12,7 +12,7 @@ const productRouter = require('./router/Product.router');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-app.use("/uploads", express.static(path.join(__dirname, 'uploads')));
+app.use("/upload", express.static(path.join(__dirname, 'upload')));
 
 app.get("/", (req, res) => {
     res.status(202).json({ msg: 'Hello Node JS!' });

@@ -2,9 +2,9 @@ const Product = require("../model/product.model")
 
 const getProducts = async (req, res) => {
     try {
-        let Product = await Product.find();
-        console.log(Product);
-        res.send(Product);
+        let Products = await Product.find();
+        console.log(Products);
+        res.send(Products);
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "Internal Server Error" });
@@ -12,15 +12,18 @@ const getProducts = async (req, res) => {
 }
 
 const createProduct = async (req, res) => {
+    console.log(req.body);
+    console.log(req.file);
+    
     if (req.file) {
-        req.body.img = req.file.path;
+        req.body.image = req.file.path;
     }
     req.body.user = req.user.id;
 
     try {
-        let Product = await Product.create(req.body);
-        console.log(Product);
-        res.status(201).json(Product);
+        let Products = await Product.create(req.body);
+        console.log(Products);
+        res.status(201).send(Products);
     } catch (error) {
         res.status(500).send(error.message);
     }
@@ -29,8 +32,8 @@ const createProduct = async (req, res) => {
 const getProductById = async (req, res) => {
     try {
         const { id } = req.params;
-        let Product = await Product.findById(id);
-        res.send(Product);
+        let Products = await Product.findById(id);
+        res.send(Products);
     } catch (error) {
         res.status(500).send(error.message);
     }
@@ -39,8 +42,9 @@ const getProductById = async (req, res) => {
 const updateProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        let Product = await Product.findByIdAndUpdate(id, req.body, { new: true });
-        res.send(Product);
+        console.log("id", id);
+        let Products = await Product.findByIdAndUpdate(id, req.body, { new: true });
+        res.send(Products);
     } catch (error) {
         res.status(500).send(error.message);
     }
@@ -49,8 +53,12 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        let Product = await Product.findByIdAndDelete(id);
-        res.send(Product);
+        console.log("id", id);
+        
+        let Products = await Product.findByIdAndDelete(id);
+        console.log(Products);
+        
+        res.send(Products);
     } catch (error) {
         res.status(500).send(error.message);
     }

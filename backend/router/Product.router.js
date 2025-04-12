@@ -7,8 +7,8 @@ const productRouter = Router();
 
 productRouter.get('/', getProducts);
 productRouter.get('/:productId', getProductById);
-productRouter.post('/', decode, upload.single("img"), createProduct);
-productRouter.patch('/:productId', decode, updateProduct);
+productRouter.post('/create', decode, upload.single("image"), createProduct);
+productRouter.patch('/:productId', decode,upload.single("image"), updateProduct);
 productRouter.delete('/:productId', decode, deleteProduct);
 
 module.exports = productRouter;

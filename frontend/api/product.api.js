@@ -13,7 +13,7 @@ const productApi = {
     },
     post: async (data) => {
         try {
-            let product = await fetch(`${baseUrl}/products`, {
+            let product = await fetch(`http://localhost:8090/products/create`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${getToken()}`,
@@ -21,6 +21,7 @@ const productApi = {
                 body: data,
             });
             let res = await product.json();
+            log("Product created successfully", res);
             return res;
         } catch (error) {
             console.log("Failed to post products", error);
