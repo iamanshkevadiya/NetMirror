@@ -1,57 +1,59 @@
 import { getToken } from "../utils/Cookies.js";
 
 const baseUrl = "http://localhost:8090";
-const productApi = {
+const addMoviesApi = {
     get: async () => {
         try {
-            let product = await fetch(`${baseUrl}/products`);
-            let res = await product.json();
+            let addMovies = await fetch(`${baseUrl}/addMovies`);
+            let res = await addMovies.json();
             return res;
         } catch (error) {
-            console.log("Failed to get products", error);
+            console.log("Failed to get addMovies", error);
         }
     },
     post: async (data) => {
+        console.log(data);
         try {
-            let product = await fetch(`${baseUrl}/products`, {
+            let addMovies = await fetch(`${baseUrl}/addMovies`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${getToken()}`,
                 },
                 body: data,
             });
-            let res = await product.json();
+            let res = await addMovies.json();
             return res;
         } catch (error) {
-            console.log("Failed to post products", error);
+            console.log("Failed to post addMoviess", error);
+            return null; // Return null in case of error
         }
     },
     delete: async (id) => {
         try {
-            let product = await fetch(`${baseUrl}/products/${id}`, {
+            let addMovies = await fetch(`${baseUrl}/addMovies/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${getToken()}`,
                 },
             });
-            let res = await product.json();
+            let res = await addMovies.json();
             return res;
         } catch (error) {
-            console.log("Failed to delete products", error);
+            console.log("Failed to delete addMoviess", error);
         }
     },
     getById: async (id) => {
         try {
-            let product = await fetch(`${baseUrl}/products/${id}`);
-            let res = await product.json();
+            let addMovies = await fetch(`${baseUrl}/addMoviess/${id}`);
+            let res = await addMovies.json();
             return res;
         } catch (error) {
-            console.log("Failed to get products", error);
+            console.log("Failed to get addMoviess", error);
         }
     },
     patch: async (id, data) => {
         try {
-            let product = await fetch(`${baseUrl}/products/${id}`, {
+            let addMovies = await fetch(`${baseUrl}/addMoviess/${id}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json",
@@ -59,12 +61,12 @@ const productApi = {
                 },
                 body: JSON.stringify(data),
             });
-            let res = await product.json();
+            let res = await addMovies.json();
             return res;
         } catch (error) {
-            console.log("Failed to update products", error);
+            console.log("Failed to update addMoviess", error);
         }
     },
 }
 
-export default productApi;
+export default addMoviesApi;

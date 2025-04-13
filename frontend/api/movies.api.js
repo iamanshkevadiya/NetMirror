@@ -15,7 +15,9 @@ const moviesApi = {
             console.log("Failed to get movies", error);
         }
     },
-    addToCart: async (product) => {
+    addToCart: async (movies) => {
+        console.log("Adding product to cart:", movies);
+
         try {
             let movies = await fetch(`${baseUrl}/movies`, {
                 method: "POST",
@@ -23,7 +25,7 @@ const moviesApi = {
                     Authorization: `Bearer ${getToken()}`,
                     "content-type": "application/json",
                 },
-                body: JSON.stringify(product),
+                body: JSON.stringify(movies),
             });
             let res = await movies.json();
             return res;
@@ -31,9 +33,9 @@ const moviesApi = {
             console.log("Failed to add movies", error);
         }
     },
-    deleteCart: async (productId) => {
+    deleteCart: async (moviesId) => {
         try {
-            let movies = await fetch(`${baseUrl}/movies/${productId}`, {
+            let movies = await fetch(`${baseUrl}/movies/${moviesId}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${getToken()}`,

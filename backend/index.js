@@ -6,7 +6,7 @@ const path = require('path');
 
 const connectDB = require('./config/DB');
 const userRouter = require('./router/User.router');
-const productRouter = require('./router/Product.router');
+const addMoviesRouter = require('./router/addMovies.router');
 
 
 app.use(cors());
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/user', userRouter);
-app.use('/products', productRouter);
+app.use('/addMovies', addMoviesRouter);
 
 const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {

@@ -1,4 +1,4 @@
-import productApi from "../api/product.api.js";
+import addMoviesApi from "../api/addmovies.api.js";
 import navbar from "../componets/navbar.js";
 
 document.getElementById("navbar").innerHTML = navbar();
@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
     }
 
     // Call API and handle the result
-    const result = await productApi.post(formData);
+    const result = await addMoviesApi.post(formData);
     if (result) {
         console.log("Movies successfully posted:", result);
         // Add success handling (e.g., update UI or reset form).
@@ -32,4 +32,4 @@ const handleSubmit = async (e) => {
 };
 
 // Add event listener to form
-document.getElementById("addProductForm").addEventListener("submit", handleSubmit);
+document.getElementById("addmovies").addEventListener("submit", handleSubmit);

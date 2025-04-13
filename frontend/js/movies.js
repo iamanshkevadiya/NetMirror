@@ -1,28 +1,36 @@
+import addMoviesApi from "../api/addmovies.api.js";
 import moviesApi from "../api/movies.api.js";
-import productApi from "../api/product.api.js";
 import navbar from "../componets/navbar.js";
 
 document.getElementById("navbar").innerHTML = navbar();
 
 const mapper = (data) => {
     data.forEach(({ user, _id, title, description, img }) => {
-        const container = document.createElement("div");
-        container.classList.add("card", "col-3", "m-2", "p-2", "bg-light");
+
+        let movie_iteams = document.getElementById("moviesContainer");
+
+        const div = document.createElement("div");
+        // container.classList.add("card", "col-3", "m-2", "p-2", "bg-light");
+
+        let a = document.createElement("a");
+        a.style = "";
 
         const imgElement = document.createElement("img");
         imgElement.src = `http://localhost:8090/${img}`;
-        imgElement.classList.add("card-img-top", "img-fluid");
+        imgElement.alt = title;
+        // imgElement.classList.add("card-img-top", "img-fluid");
 
         const titleElement = document.createElement("h5");
-        titleElement.classList.add("card-title");
-        titleElement.innerText = title;
+        titleElement.textContent = title;
+        // titleElement.classList.add("card-title");
 
         const descriptionElement = document.createElement("p");
-        descriptionElement.classList.add("card-text");
-        descriptionElement.innerText = description;
+        descriptionElement.textContent = description;
+        // descriptionElement.classList.add("card-text");
 
         const buttonGroup = document.createElement("div");
-        buttonGroup.classList.add("btn-group", "d-flex");
+        buttonGroup.textContent = "Watch Movie";
+        // buttonGroup.classList.add("btn-group", "d-flex");
 
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Delete";
@@ -34,27 +42,26 @@ const mapper = (data) => {
         });
 
         buttonGroup.appendChild(deleteButton);
-        container.appendChild(imgElement);
-        container.appendChild(titleElement);
-        container.appendChild(descriptionElement);
-        container.appendChild(buttonGroup);
+        a.appendChild(imgElement, titleElement, descriptionElement);
+        div.appendChild(a, buttonGroup);
+        movie_iteams.appendChild(div);
 
-        document.getElementById("moviesContainer").appendChild(container);
     });
 }
 
 const getMovies = async () => {
     try {
-        const movies = await productApi.getByUserId();
+        const data = await addMoviesApi.get();
         if (!data || data.length === 0) {
-            console.warn("No products available.");
+            console.warn("No movies available.");
             document.getElementById("moviesContainer").textContent = "No Movies available.";
             return;
         }
-        mapper(movies);
+        mapper(data);
     } catch (error) {
         console.error("Error fetching products:", error);
-        document.getElementById("moviesContainer").textContent = "Failed to load products. Please try again later.";
+        document.getElementById("moviesContainer").textContent = "Failed to load movies. Please try again later.";
     }
 }
+
 getMovies();

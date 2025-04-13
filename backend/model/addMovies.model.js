@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
-const productSchema = new mongoose.Schema({
+const addMoviesSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: "ADMIN" },
     title: { type: String, required: true },
     description: { type: String, required: true },
@@ -11,5 +11,5 @@ const productSchema = new mongoose.Schema({
     },
 });
 
-const Product = mongoose.model("product", productSchema);
-module.exports = Product;
+const addMovies = mongoose.model("addMovies", addMoviesSchema);
+module.exports = addMovies;
