@@ -7,13 +7,13 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
-    const img = document.getElementById("img");
+    const image = document.getElementById("img");
     const category = document.getElementById("category").value;
 
     const formData = new FormData();
     formData.append('title', title);
     formData.append('description', description);
-    formData.append('img', img.files[0]);
+    formData.append('img', image.files[0]);
     formData.append('category', category);
 
     // Debug: Log FormData content
