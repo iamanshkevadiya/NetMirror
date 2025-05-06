@@ -4,27 +4,28 @@ import navbar from "../componets/navbar.js";
 
 document.getElementById("navbar").innerHTML = navbar();
 
+// Function to get query parameter
+const getQueryParam = (param) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+};
+
 // Function to search content
 const searchContent = async (searchTerm) => {
     try {
-        // Show loading state
         const container = document.getElementById("searchResults");
         container.innerHTML = '<div class="loading">Searching...</div>';
 
-        // Get both movies and series
         const movies = await addMoviesApi.get();
-        
-        // Filter results based on search term
-        const searchResults = movies.filter(item => 
+        const searchResults = movies.filter(item =>
             item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.description.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
-        // Display results
         displaySearchResults(searchResults);
     } catch (error) {
         console.error("Error searching content:", error);
-        document.getElementById("searchResults").innerHTML = 
+        document.getElementById("searchResults").innerHTML =
             '<div class="no-results">Failed to search. Please try again later.</div>';
     }
 };
@@ -32,7 +33,7 @@ const searchContent = async (searchTerm) => {
 // Function to display search results
 const displaySearchResults = (results) => {
     const container = document.getElementById("searchResults");
-    container.innerHTML = ''; // Clear existing content
+    container.innerHTML = '';
 
     if (!results || results.length === 0) {
         container.innerHTML = '<div class="no-results">No movies or TV series found matching your search.</div>';
@@ -57,26 +58,10 @@ const displaySearchResults = (results) => {
     });
 };
 
-// Add event listener for search input
+// Get search term from URL and perform search
 document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
-
-    // Search when button is clicked
-    searchButton.addEventListener('click', () => {
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm) {
-            searchContent(searchTerm);
-        }
-    });
-
-    // Search when Enter key is pressed
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            const searchTerm = searchInput.value.trim();
-            if (searchTerm) {
-                searchContent(searchTerm);
-            }
-        }
-    });
-}); 
+    const searchTerm = getQueryParam('query');
+    if (searchTerm) {
+        searchContent(searchTerm);
+    }
+});
