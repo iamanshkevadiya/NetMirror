@@ -3,35 +3,34 @@ console.log("Token:", token);
 
 const decodeToken = token ? jwt_decode(token) : undefined;
 
-// Function to handle search
-const handleSearch = () => {
-  const searchInput = document.getElementById("searchInput");
-  const searchTerm = searchInput.value.trim();
-  if (searchTerm) {
-    // Redirect to search results page with query parameter
-    window.location.href = `/frontend/pages/search.html?query=${encodeURIComponent(
-      searchTerm
-    )}`;
-  }
-};
-
-// Function to handle logout
 const logout = () => {
-  console.log("Logout clicked");
-  Cookies.remove("token");
-  window.location.href = "/frontend/pages/login.html";
+    console.log("Logout clicked");
+    Cookies.remove("token");
+    window.location.href = "/frontend/pages/login.html";
+}
+
+const handleSearch = () => {
+    const searchInput = document.getElementById("searchInput");
+    const searchTerm = searchInput.value.trim();
+    if (searchTerm) {
+        // Redirect to search results page with query parameter
+        window.location.href = `/frontend/pages/search.html?query=${encodeURIComponent(
+            searchTerm
+        )}`;
+    }
 };
 
 const navbar = () => {
-  let tag = ``;
+    let tag = ``;
 
-  if (decodeToken) {
-    tag = `<a class="nav-link" id="logout">Logout</a>`;
-  } else {
-    tag = `<a class="nav-link" href="/frontend/pages/login.html">Login</a>`;
-  }
+    if (decodeToken) {
+        tag = `<a class="nav-link" id=logout>Logout</a>`;
+    }
+    else {
+        tag = `<a class="nav-link" href="/frontend/pages/login.html">Login</a>`;
+    }
 
-  return `<nav class="navbar navbar-expand-lg">
+    return `<nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between header">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -76,30 +75,30 @@ const navbar = () => {
                 </div>
             </div>
         </nav>`;
-};
+}
 
 export default navbar;
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Attach event listeners for search functionality
-  const searchButton = document.getElementById("searchButton");
-  const searchInput = document.getElementById("searchInput");
+document.addEventListener('DOMContentLoaded', () => {
 
-  if (searchButton) {
-    searchButton.addEventListener("click", handleSearch);
-  }
+    const searchButton = document.getElementById("searchButton");
+    const searchInput = document.getElementById("searchInput");
 
-  if (searchInput) {
-    searchInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        handleSearch();
-      }
-    });
-  }
+    if (searchButton) {
+        searchButton.addEventListener("click", handleSearch);
+    }
 
-  // Attach event listener for logout
-  const logoutBtn = document.getElementById("logout");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", logout);
-  }
+    if (searchInput) {
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                handleSearch();
+            }
+        });
+    }
+    let logoutBtn = document.getElementById('logout');
+    console.log(logoutBtn);
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', logout);
+    }
 });
